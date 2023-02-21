@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RickAndMortyChars</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="default_error_message">Ha ocurrido un error, por favor inténtelo más tarde</string>
+    <string name="connection_error_message">Ha ocurrido un error de conexión, revisa tu conexión a internet</string>
+    <string name="character_list_view_title">Character List</string>
+</resources>
