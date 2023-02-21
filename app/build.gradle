@@ -97,13 +97,8 @@ dependencies {
     // Splashscreen
     implementation 'androidx.core:core-splashscreen:1.0.0'
 
-    // Glide
-    def glideVersion = "4.14.2"
-    implementation "com.github.bumptech.glide:glide:$glideVersion"
-    ksp 'com.github.bumptech.glide:ksp:4.14.2'
     //Coil
     implementation("io.coil-kt:coil-compose:2.2.2")
-
 
     // Hilt
     def hiltVersion = '2.44.2'

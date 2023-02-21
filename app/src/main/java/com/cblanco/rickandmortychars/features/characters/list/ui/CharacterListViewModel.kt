@@ -1,6 +1,5 @@
 package com.cblanco.rickandmortychars.features.characters.list.ui
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -24,15 +23,10 @@ class CharacterListViewModel
 
     override var viewState by mutableStateOf(CharcterListState())
 
-    init {
-        onFetchData()
-    }
-
     override fun processIntent(intent: CharacterListIntent) = when (intent) {
         is CharacterListIntent.FetchData -> onFetchData()
         is CharacterListIntent.ClickCharacter -> onClickCharacter(intent.character)
     }
-
 
     private fun onFetchData() {
         viewState = viewState.copy(loading = true)
@@ -42,7 +36,6 @@ class CharacterListViewModel
                 loading = false, characterList = it
             )
         }, { error ->
-            Log.e("catest", "error $error")
             viewState = viewState.copy(
                 loading = false
             )

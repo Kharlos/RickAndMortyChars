@@ -2,7 +2,6 @@ package com.cblanco.rickandmortychars.features.characters.list.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -11,6 +10,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -39,7 +39,12 @@ import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 fun CharacterList(
     viewModel: CharacterListViewModel = hiltViewModel(), navigator: DestinationsNavigator
 ) {
+    LaunchedEffect(Unit){
+        viewModel.sendIntent(CharacterListIntent.FetchData)
+    }
+
     val state = viewModel.viewState
+
 
     Column() {
         AppBar(

@@ -15,7 +15,6 @@ import kotlinx.coroutines.flow.flow
 
 class CharacterDataRepository(private val apiService: APIService) : CharacterRepository {
 
-
     override fun getCharacterList(): Flow<ResultOf<List<CharacterItemModel>>>  = flow {
         emit(apiService.getCharacters().safeCall({ response -> response.results.map { it.toDomain() }}))
     }.catch {
